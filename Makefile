@@ -11,9 +11,9 @@ stop:
 	nginx -p $(shell pwd) -c ./nginx.conf -s stop
 
 enable:
-	test -f maintenance.html || mv maintenance.html.disabled maintenance.html
+	mv maintenance/index.html.disabled maintenance/index.html
 disable:
-	test -f maintenance.html.disabled || mv maintenance.html.disabled maintenance.html
+	mv maintenance/index.html maintenance/index.html.disabled
 
 test:
 	./test.py
